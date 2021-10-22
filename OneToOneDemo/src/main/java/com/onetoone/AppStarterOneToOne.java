@@ -17,12 +17,21 @@ public class AppStarterOneToOne {
 //        addLockerToExistingCustomer();
 //        getCustomer();
 //        deleteLocker();
-        getLockers();
+//        getLockers();
         assignExistingLockerToCustomer();
         System.out.println("Done");
     }
 
     private static void assignExistingLockerToCustomer() {
+        System.out.println("Enter the customer id");
+        Scanner sc = new Scanner(System.in);
+        int custId = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Select one of the following empty lockers");
+        getLockers();
+        String lockerId = sc.nextLine();
+        lockerDao.addExistingLockerToCustomer(custId, lockerId);
+        System.out.println("locker "+lockerId+" added to "+custId+" successfully");
     }
 
     private static void getLockers() {

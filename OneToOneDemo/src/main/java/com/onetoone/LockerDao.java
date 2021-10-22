@@ -71,4 +71,15 @@ public class LockerDao {
         locLoc.removeAll(cusLoc);
         return locLoc;
     }
+
+    public void addExistingLockerToCustomer(int custId, String lockerId){
+        Session session = DBUtils.getSessionFactory().openSession();
+        session.beginTransaction();
+        Locker locker = session.get(Locker.class, lockerId);
+        Customer customer = session.get(Customer.class, custId);
+        customer.setLocker(locker);
+//        session.saveOrUpdate(customer);
+        session.save(customer);
+        session.getTransaction().commit();
+    }
 }
