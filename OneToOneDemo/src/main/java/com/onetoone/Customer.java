@@ -7,8 +7,10 @@ import java.sql.Date;
 
 @Entity
 @Table(name = "CUSTOMER")
+@GenericGenerator(name = "idgen", strategy = "increment")
 public class Customer {
     @Id
+    @GeneratedValue(generator = "idgen")
     private int CustomerId;
 
     private String CustomerName;
@@ -19,7 +21,8 @@ public class Customer {
 
     private String phoneNumber;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    // , orphanRemoval = true
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "lockerId", unique = true)
     private Locker locker;
 

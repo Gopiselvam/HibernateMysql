@@ -12,20 +12,15 @@ public class DBUtils {
 
     private static SessionFactory sessionFactory;
 
-    /*static {
+    static {
         StandardServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                 .configure("hibernate.cfg.xml").build();
 
         Metadata metadata = new MetadataSources(serviceRegistry).getMetadataBuilder().build();
         sessionFactory = metadata.getSessionFactoryBuilder().build();
-        }*/
+        }
 
     public static SessionFactory getSessionFactory(){
-        StandardServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
-                .configure("hibernate.cfg.xml").build();
-
-        Metadata metadata = new MetadataSources(serviceRegistry).getMetadataBuilder().build();
-        sessionFactory = metadata.getSessionFactoryBuilder().build();
         return sessionFactory;
     }
 
