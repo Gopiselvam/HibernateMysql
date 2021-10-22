@@ -1,0 +1,6 @@
+# Project exclude paths
+/OneToOneDemo/target/
+
+# project exclude files
+
+/OneToOneDemo/src/main/java/com/onetoone/Temp.java
