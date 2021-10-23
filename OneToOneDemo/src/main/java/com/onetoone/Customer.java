@@ -23,7 +23,7 @@ public class Customer {
 
     // , orphanRemoval = true
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "lockerId", unique = true)
+    @JoinColumn(name = "LOCKERID", unique = true)
     private Locker locker;
 
     public Customer() {

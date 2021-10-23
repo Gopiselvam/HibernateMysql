@@ -15,10 +15,10 @@ public class AppStarterOneToOne {
 
 //        addCustomerAndLocker();
 //        addLockerToExistingCustomer();
-//        getCustomer();
+        getCustomer();
 //        deleteLocker();
 //        getLockers();
-        assignExistingLockerToCustomer();
+//        assignExistingLockerToCustomer();
         System.out.println("Done");
     }
 
